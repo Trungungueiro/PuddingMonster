@@ -1,0 +1,45 @@
+void CrypticaBoard::Move( int a)
+{
+	int row, col;
+	int aux;
+			for(row = m_nRows-1; row >= 0; row--){
+				for(col = m_nColumns-1; col >= 0; col--){
+				aux=m_arrBoard[row][col];
+				if((m_arrBoard[row][col]== m_arrChars[2]) || (m_arrBoard[row][col]== m_arrChars[3])){
+				if((a==80)){
+					
+					if(row!=4 && m_arrBoard[row+1][col]!= m_arrChars[5]){
+						m_arrBoard[row][col]=aux;
+						m_arrBoard[row][col]=m_arrChars[0];
+						m_arrBoard[row+1][col]=aux;
+				}}
+			
+				if((a==77)){
+					if(col!= 6&& m_arrBoard[row][col+1]!= m_arrChars[5]){
+						m_arrBoard[row][col]=aux;
+						m_arrBoard[row][col]=m_arrChars[0];
+						m_arrBoard[row][col+1]=aux;
+				}}  			}
+	}	
+}
+	for(row = 0; row < m_nRows; row++){
+			for(col = 0; col < m_nColumns; col++){
+				aux=m_arrBoard[row][col];
+				if((m_arrBoard[row][col]== m_arrChars[2]) || (m_arrBoard[row][col]== m_arrChars[3])){
+				if((a==72)){
+					if(row!=0 && m_arrBoard[row-1][col]!= m_arrChars[5]){
+						
+						m_arrBoard[row][col]=aux;
+						m_arrBoard[row][col]=m_arrChars[0];
+						m_arrBoard[row-1][col]=aux;
+				}}
+				if((a==75)){
+					if(col!= 0&& m_arrBoard[row][col-1]!= m_arrChars[5]){
+						m_arrBoard[row][col]=aux;
+						m_arrBoard[row][col]=m_arrChars[0];
+						m_arrBoard[row][col-1]=aux;
+				}}
+ 			}
+	}
+}}
+
